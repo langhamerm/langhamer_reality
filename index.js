@@ -4,14 +4,17 @@ const express = require("express");
 // const passport = require("passport");
 // const bodyParser = require("body-parser");
 // const keys = require("./config/keys");
-
+const app = express();
 // require("./models/User");
 // require("./services/passport");
 
 // mongoose.connect(keys.mongoURI);
 
-const app = express();
 
+
+app.get("/", (req, res) => {
+  res.sendFile({ yo: "yo" });
+});
 // app.use(bodyParser.json());
 
 // app.use(
@@ -26,9 +29,7 @@ const app = express();
 // require("./routes/authRoutes")(app);
 // require("./routes/billingRoutes")(app);
 
-app.get("/", (req, res) => {
-  res.sendFile({ yo: "yo" });
-});
+
 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
